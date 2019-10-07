@@ -127,29 +127,7 @@ def hidden_check(row, variable,metadata):
 
 
 
-if __name__=="__main__":
-    from settings import rtss
-    from data.redcap import get_data, get_metadata, Metadata
-    metadata = Metadata(get_metadata(rtss))
-    data = get_data(rtss)
-    # data = [metadata.format_data(r) for r in data]
 
-    # row = data[0]
-    # # variables = ['branching_logic', 'ipno']
-
-
-
-    logics = {v: metadata.get_branching_logic(v) for v in metadata.get_variables(expand_checkbox=True)}
-    logics1 = {v: l for v, l in logics.items() if l is not None}
-    logics3 = {v: convert_branching_logic(l) for v, l in logics1.items()}
-
-    logics4 = {}
-
-    for v, l in logics3.items():
-        logics4[v] = eval(l, {"data": data[0]})
-
-    hidden = [metadata.get_hidden(v) for v in metadata.get_variables(expand_checkbox=True)]
-    hidden = [h for h in hidden if h is not None]
 
 
 
