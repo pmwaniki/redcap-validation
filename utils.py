@@ -22,11 +22,4 @@ def format_missing(row, date_missing=datetime.strptime('1915-01-01', '%Y-%m-%d')
 
         return new_row
 
-# metadata=Metadata(get_metadata(rtss))
-# data = get_data(rtss, variables=metadata.get_variables(expand_checkbox=False))
-# data = [metadata.format_data(r) for r in data]
-# row=data[162]
-# data_formatted = [format_missing(row=r) for r in data]
-# data = get_data(rtss)
-# row = data[162]
-# y = format_missing(row)
+
